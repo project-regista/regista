@@ -1,0 +1,15 @@
+sudo: false
+services:
+- docker
+language: go
+go:
+- 1.7.4
+before_install:
+- docker build -t regista -f resources/test/Dockerfile .
+script:
+- docker run --rm regista
+notifications:
+  on_success: always
+  email: false
+  slack:
+    secure: q/ZKtSRDbpTKI8fZat5kjP23VCydYnOoZU01Oaz/qPkkmzbIVvhOFTPAGtmpijGrWH8x3qhfHuP5jTupgquf6jgFKm6AwjcRhEkmEgY1WFkjJW6hOwtixqjHjQmVRNKH/1b+u5pondMovN7UN2j158X3KYVZDhYJOK6OLrVISWy2UxcgnNNxbER8urf2tKf2v0ZBPY/hfgcNtkW/hIPepjbGT8nawi+b1KjvgyUUGEU//aXEKz8IqQK8JvKhVKZywb/VjodACM/G7mXt379IFsIDTHf3vgyE+uFeev+Df3O3Hb9BwMvQLdDT1IqsCsz8F2fKxbf1CWyec40+M4nGu4kYeIuvh5w4vC/PozCIhtrL61rC1ShP10ZqloUHqqEjXWkXZgEgzOcAmCAhdZb0dJin+bA9uCVfojXtcAImiCo1AvH9KgvWz547N/cBaOPoaUM6y5RVTGFfE0SeE9Q5izBvl7W+Q+RXmfINS01jKJYZIwH8CXQ5CpGHMJIe44UsVMBYZJ/87ec5oEgoPYzh+CVRswyf5slvrFIT41ll5HO+Ptuv38InoKy/NCabqjwmAaSMDPQVN1pxxaVnYE4qid2ZJmQuL8PPGHyZfQu7t6rYvMlDHCDq4wQifmMqJf9BuahcKi643zzmicBUopGkvLao/z6NYW8aSsDsSOxHUzg=
