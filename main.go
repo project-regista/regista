@@ -149,4 +149,11 @@ func main() {
 		}
 		stmt.Close()
 	}
+
+	// MATCH SEASON
+	matchSeason, err := request.GetMatchSeason(scout, "795379")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("match season: %+v\n", matchSeason)
 }
