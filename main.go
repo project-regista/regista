@@ -6,6 +6,7 @@ import (
 
 	neo4j "github.com/project-regista/neo4go/client"
 	"github.com/project-regista/neo4go/storage"
+	"github.com/project-regista/regista/util"
 	scout "github.com/project-regista/scout/client"
 	"github.com/project-regista/scout/request"
 )
@@ -156,4 +157,9 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("match season: %+v\n", matchSeason)
+
+	t := util.DateIntervals("01 Jan 17", "28 Jun 17")
+	for k, v := range t {
+		fmt.Println(k, v)
+	}
 }
