@@ -4,4 +4,4 @@ COPY . src/github.com/project-regista/regista
 
 WORKDIR src/github.com/project-regista/regista
 
-ENTRYPOINT ["go", "test", "./...", "-v"]
+ENTRYPOINT ["./resources/test/test.sh"]
